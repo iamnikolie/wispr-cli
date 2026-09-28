@@ -232,7 +232,7 @@ func DictationsMarkdown(c Clock, day string, ds []store.Dictation) string {
 	return b.String()
 }
 
-// appLabel shortens a bundle id ("com.cmuxterm.app" → "cmuxterm") for the
+// appLabel shortens a bundle id ("com.example.terminal" → "terminal") for the
 // inline tag; the full id stays available in list/json output.
 func appLabel(app string) string {
 	if app == "" {
