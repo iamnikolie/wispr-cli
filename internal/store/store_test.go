@@ -27,8 +27,8 @@ func fixture(t *testing.T) *Store {
 		"CREATE TABLE Dictionary (id TEXT PRIMARY KEY, phrase TEXT, replacement TEXT, isSnippet TINYINT DEFAULT 0, source TEXT, frequencyUsed INTEGER DEFAULT 0, remoteFrequencyUsed INTEGER DEFAULT 0, lastUsed DATETIME, isDeleted TINYINT DEFAULT 0)",
 		"CREATE TABLE Todos (id TEXT PRIMARY KEY, meetingId TEXT, title TEXT, status TEXT, isDeleted TINYINT DEFAULT 0, createdAt DATETIME)",
 		`INSERT INTO History VALUES
-		  ('d1','hello world raw','Hello, world.','', '2026-09-20 08:00:00.000 +00:00','formatted','com.cmuxterm.app','',2,1.5,0,NULL,'en','darwin','','Mic','1.6.0',NULL),
-		  ('d2','raw only','', '', '2026-09-21 09:30:00.000 +00:00','raw_transcript','com.todesktop.230313mzl4w4u92','',2,1.0,0,NULL,'ru','darwin','','Mic','1.6.0',NULL),
+		  ('d1','hello world raw','Hello, world.','', '2026-09-20 08:00:00.000 +00:00','formatted','com.example.terminal','',2,1.5,0,NULL,'en','darwin','','Mic','1.6.0',NULL),
+		  ('d2','raw only','', '', '2026-09-21 09:30:00.000 +00:00','raw_transcript','com.example.editor','',2,1.0,0,NULL,'ru','darwin','','Mic','1.6.0',NULL),
 		  ('d3','','dismissed text','', '2026-09-21 10:00:00.000 +00:00','dismissed','com.google.Chrome','',2,1.0,0,NULL,'en','darwin','','Mic','1.6.0',NULL),
 		  ('d4','','archived text','', '2026-09-22 10:00:00.000 +00:00','formatted','com.google.Chrome','',2,1.0,1,NULL,'en','darwin','','Mic','1.6.0',NULL),
 		  ('d5','','Deploy it now.   ','', '2026-09-23 11:00:00.000 +00:00','formatted','ru.keepcoder.Telegram','',3,2.0,0,NULL,'en','darwin','','Mic','1.6.0',X'0102')`,

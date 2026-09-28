@@ -63,7 +63,7 @@ func TestMeetingMarkdown(t *testing.T) {
 func TestDictationsByDay(t *testing.T) {
 	c := Clock{UTC: true}
 	ds := []store.Dictation{
-		{Time: time.Date(2026, 9, 22, 10, 5, 0, 0, time.UTC), App: "com.cmuxterm.app", Words: 2, Text: "second\nline two"},
+		{Time: time.Date(2026, 9, 22, 10, 5, 0, 0, time.UTC), App: "com.example.terminal", Words: 2, Text: "second\nline two"},
 		{Time: time.Date(2026, 9, 22, 9, 0, 0, 0, time.UTC), App: "com.google.Chrome", Words: 1, Text: "first"},
 		{Time: time.Date(2026, 9, 23, 9, 0, 0, 0, time.UTC), App: "Slack", Words: 1, Text: "next day"},
 	}
@@ -75,7 +75,7 @@ func TestDictationsByDay(t *testing.T) {
 	if !strings.Contains(day, "dictations: 2\nwords: 3\n") {
 		t.Fatalf("front matter:\n%s", day)
 	}
-	if i, j := strings.Index(day, "**09:00** `Chrome` first"), strings.Index(day, "**10:05** `cmuxterm` second\n  line two"); i < 0 || j < 0 || i > j {
+	if i, j := strings.Index(day, "**09:00** `Chrome` first"), strings.Index(day, "**10:05** `terminal` second\n  line two"); i < 0 || j < 0 || i > j {
 		t.Fatalf("ordering or formatting wrong:\n%s", day)
 	}
 	if !strings.Contains(files["2026-09-23.md"], "`Slack` next day") {

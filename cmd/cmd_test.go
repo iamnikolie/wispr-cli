@@ -49,7 +49,7 @@ func fixtureDB(t *testing.T) string {
 		"CREATE TABLE Dictionary (id TEXT PRIMARY KEY, phrase TEXT, replacement TEXT, isSnippet TINYINT DEFAULT 0, source TEXT, frequencyUsed INTEGER DEFAULT 0, remoteFrequencyUsed INTEGER DEFAULT 0, lastUsed DATETIME, isDeleted TINYINT DEFAULT 0)",
 		"CREATE TABLE Todos (id TEXT PRIMARY KEY, meetingId TEXT, title TEXT, status TEXT, isDeleted TINYINT DEFAULT 0, createdAt DATETIME)",
 		`INSERT INTO History VALUES
-		  ('d1','','Hello, world.','', '2026-09-20 08:00:00.000 +00:00','formatted','com.cmuxterm.app','',2,1.5,0,NULL,'en','darwin','','Mic','1.6.0'),
+		  ('d1','','Hello, world.','', '2026-09-20 08:00:00.000 +00:00','formatted','com.example.terminal','',2,1.5,0,NULL,'en','darwin','','Mic','1.6.0'),
 		  ('d2','','Deploy it now.','', '2026-09-27 11:00:00.000 +00:00','formatted','ru.keepcoder.Telegram','',3,2.0,0,NULL,'en','darwin','','Mic','1.6.0')`,
 		`INSERT INTO Meetings VALUES ('aaaa1111-0000-0000-0000-000000000001','Planning sync','2026-09-22 10:00:00.000 +00:00','2026-09-22 11:00:00.000 +00:00',0,3600000,'','Decided X.','', '','complete','','',0,0)`,
 		`INSERT INTO Notes VALUES ('nnnn1111-0000-0000-0000-000000000001','Shopping','milk','2026-09-01 10:00:00.000 +00:00','2026-09-02 10:00:00.000 +00:00',0,0)`,
@@ -107,7 +107,7 @@ func TestDictationsList(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if !strings.Contains(out, "| time | app | words | text |") || !strings.Contains(out, "| 2026-09-20T08:00:00Z | cmuxterm | 2 | Hello, world. |") {
+	if !strings.Contains(out, "| time | app | words | text |") || !strings.Contains(out, "| 2026-09-20T08:00:00Z | terminal | 2 | Hello, world. |") {
 		t.Fatalf("table:\n%s", out)
 	}
 	out, _, _ = run(t, db, "dictations", "list", "--since", "3d", "--format", "text")

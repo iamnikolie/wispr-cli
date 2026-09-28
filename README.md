@@ -31,13 +31,13 @@ on stdout, nothing costs context until it is called.
 ```text
 $ wispr status
 db: /Users/me/Library/Application Support/Wispr Flow/flow.sqlite
-db_mb: 194.2
+db_mb: 120.4
 app_version: 1.6.957
-dictations: 1225
-dictation_words: 23310
-dictations_first: 2026-06-05
-dictations_last: 2026-09-25
-meetings: 8
+dictations: 812
+dictation_words: 15930
+dictations_first: 2026-06-01
+dictations_last: 2026-09-20
+meetings: 5
 ...
 
 $ wispr dictations list --since 1d --format text
@@ -47,10 +47,10 @@ $ wispr dictations list --since 1d --format text
 $ wispr meetings list --since 7d
 | id | created | duration | title | summary_chars |
 | --- | --- | --- | --- | --- |
-| 52b4f8f9 | 2026-09-28T12:03:20+02:00 | 1h00m | Weekly planning | 3281 |
-| ba6affd2 | 2026-09-25T10:00:50+02:00 | 1h03m | Release review | 3175 |
+| 3f9a1c2e | 2026-09-21T10:00:12+02:00 | 58m10s | Weekly planning | 3120 |
+| b71e04d9 | 2026-09-18T15:30:05+02:00 | 41m22s | Release review | 2410 |
 
-$ wispr meetings show 52b4 --transcript      # Markdown: summary + transcript
+$ wispr meetings show 3f9a --transcript      # Markdown: summary + transcript
 $ wispr export --transcript -o ~/vault/wispr # meetings/, dictations/, notes/ as .md
 ```
 
@@ -122,7 +122,7 @@ Global flags: `--format md|table|json|csv|tsv|text`, `--json`,
 `--fields a,b`, `--utc`, `--db`. Time bounds `--since`/`--until` take `24h`,
 `7d`, `2w`, `3mo` or `2026-09-01[T10:00]`.
 
-Ids are UUIDs; any unique prefix works (`wispr meetings show 52b4`).
+Ids are UUIDs; any unique prefix works (`wispr meetings show 3f9a`).
 
 ## Using it from an agent
 
