@@ -72,7 +72,7 @@ tar xzf wispr-cli_*_darwin_arm64.tar.gz
 sudo mv wispr /usr/local/bin/
 ```
 
-**With Go** (1.24+) — `go install` names the binary after the module, so
+**With Go** (1.25+) — `go install` names the binary after the module, so
 rename it:
 
 ```bash
